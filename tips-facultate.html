@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pe scurt, la facultate – sfaturi și trucuri pentru studenți</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Literata:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f3f6fb; --grid:#d8e1ef; --ink:#14233f; --muted:#55627a; --card:#ffffff;
+  --mark:#ffe14d; --markink:#14233f; --accent:#2f5bd9; --line:#c9d4e6;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0f1829; --grid:#1a2740; --ink:#e8eefb; --muted:#9aa8c2; --card:#16223a;
+    --mark:#ffd633; --markink:#101a2e; --accent:#8fb0ff; --line:#2b3b5c;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f1829; --grid:#1a2740; --ink:#e8eefb; --muted:#9aa8c2; --card:#16223a;
+  --mark:#ffd633; --markink:#101a2e; --accent:#8fb0ff; --line:#2b3b5c;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background-color:var(--bg);color:var(--ink);font:400 1.05rem/1.65 Literata,Georgia,serif;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px}
+h1,h2,h3,.chip,button,summary{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px}
+h1{font-size:clamp(2.6rem,9vw,5rem);line-height:1;margin:0 0 18px;font-weight:800;letter-spacing:-.03em}
+h1 mark{background:var(--mark);color:var(--markink);padding:0 .12em;border-radius:3px;
+  background-size:0% 100%;background-repeat:no-repeat;
+  background-image:linear-gradient(var(--mark),var(--mark));background-color:transparent;
+  animation:hl 900ms .3s ease-out forwards}
+@keyframes hl{to{background-size:100% 100%}}
+h1 mark{color:var(--ink)}
+.lead{max-width:56ch;color:var(--muted);font-size:1.15rem;margin:0}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 20px}
+.chip{border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:999px;
+  font-weight:500;font-size:.95rem;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tips{display:grid;gap:10px;margin-bottom:48px}
+details{background:var(--card);border:1.5px solid var(--line);border-left:6px solid var(--accent);border-radius:6px}
+details[data-c="examene"]{border-left-color:#d6452f}
+details[data-c="bani"]{border-left-color:#1f9d6b}
+details[data-c="viata"]{border-left-color:#b36bd9}
+details[data-c="productivitate"]{border-left-color:#e0a100}
+summary{cursor:pointer;padding:16px 18px;font-weight:500;font-size:1.12rem;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--muted);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0;padding:0 18px 18px;max-width:64ch}
+.tag{font-size:.82rem;color:var(--muted);font-weight:400;display:block}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);letter-spacing:-.02em;margin:0 0 6px}
+section{margin-bottom:56px}
+.tools{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.box{background:var(--card);border:2px solid var(--ink);border-radius:8px;padding:22px}
+.timer{font:800 4rem/1 "Bricolage Grotesque",system-ui,sans-serif;font-variant-numeric:tabular-nums;margin:10px 0}
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+button.b{border:2px solid var(--ink);background:var(--mark);color:var(--markink);padding:9px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.95rem}
+button.b.alt{background:transparent;color:var(--ink)}
+.box h3{margin:0;font-size:1.25rem}
+.small{color:var(--muted);font-size:.92rem;margin:4px 0 0}
+.check{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{margin-top:.45em;accent-color:var(--accent);width:18px;height:18px}
+.check input:checked+span{text-decoration:line-through;color:var(--muted)}
+footer{padding:24px 0 48px;color:var(--muted);font-size:.95rem;border-top:2px solid var(--ink)}
+.theme{position:absolute;right:20px;top:calc(16px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:reduce){h1 mark{animation:none;background-size:100% 100%}}
+</style>
+</head>
+<body>
+<button class="chip theme" id="theme" aria-label="Schimbă tema">Temă</button>
+<div class="wrap">
+<header>
+  <h1>Facultatea,<br>pe <mark>scurt</mark>.</h1>
+  <p class="lead">Sfaturi practice de la studenți care au trecut deja prin asta: cum înveți mai eficient, cum treci examenele, cum îți ții banii în mână și cum nu te pierzi pe drum.</p>
+</header>
+
+<section aria-labelledby="t">
+  <h2 id="t">Sfaturi pe categorii</h2>
+  <div class="bar" id="bar" role="group" aria-label="Filtrează sfaturile">
+    <button class="chip" data-f="toate" aria-pressed="true">Toate</button>
+    <button class="chip" data-f="invatat" aria-pressed="false">Învățat</button>
+    <button class="chip" data-f="examene" aria-pressed="false">Examene</button>
+    <button class="chip" data-f="productivitate" aria-pressed="false">Organizare</button>
+    <button class="chip" data-f="bani" aria-pressed="false">Bani</button>
+    <button class="chip" data-f="viata" aria-pressed="false">Viața de student</button>
+  </div>
+  <div class="tips" id="tips">
+    <details data-c="invatat"><summary><span>Recapitulează în aceeași zi<span class="tag">Învățat</span></span></summary><p>Zece minute de recapitulare după curs, în aceeași zi, țin minte mai mult decât două ore de memorat în ajun de examen. Rescrie din memorie ideile principale, apoi verifică în notițe ce ți-a scăpat.</p></details>
+    <details data-c="invatat"><summary><span>Explică materia cuiva (sau unui obiect)<span class="tag">Învățat</span></span></summary><p>Dacă nu poți explica o temă în cuvinte simple, nu ai înțeles-o încă. Explic-o cu voce tare unui coleg, unei prietene sau chiar unei plante. Locurile unde te blochezi sunt exact ce mai ai de învățat.</p></details>
+    <details data-c="invatat"><summary><span>Testează-te în loc să recitești<span class="tag">Învățat</span></span></summary><p>Recitirea dă senzația că știi. Întrebările și grilele de test te obligă să scoți informația din cap, iar asta o fixează. Transformă fiecare capitol în 5–10 întrebări și răspunde fără să te uiți.</p></details>
+    <details data-c="invatat"><summary><span>Grupul de studiu: mic și cu regulă<span class="tag">Învățat</span></span></summary><p>Maximum 3–4 persoane, cu o oră de început și un subiect stabilit în prealabil. Fiecare vine pregătit să explice o parte. Altfel se transformă repede în discuții despre orice altceva.</p></details>
+    <details data-c="examene"><summary><span>Cere subiectele din anii trecuți<span class="tag">Examene</span></span></summary><p>Întreabă seniorii sau caută în grupurile facultății. Subiectele vechi îți arată ce tip de întrebări apar și ce îi interesează pe profesori. Rezolvă-le cronometrat, ca la examen.</p></details>
+    <details data-c="examene"><summary><span>Începe cu partea cea mai grea<span class="tag">Examene</span></span></summary><p>Cu 2–3 săptămâni înainte, pune în prim-plan capitolele care îți fac cele mai multe probleme, nu pe cele plăcute. Lasă ultimele zile pentru recapitulare și somn.</p></details>
+    <details data-c="examene"><summary><span>Dormi înainte de examen<span class="tag">Examene</span></span></summary><p>Noaptea albă strică exact ce ai nevoie la examen: concentrarea și memoria de lucru. Mai bine șapte ore de somn și o recapitulare ușoară dimineața decât încă un capitol învățat pe jumătate.</p></details>
+    <details data-c="examene"><summary><span>Vorbește cu profesorul din timp<span class="tag">Examene</span></span></summary><p>Mergi la ore de consultații cu întrebări concrete. Profesorii observă studenții implicați, iar răspunsurile lor îți spun adesea ce contează cu adevărat la examen.</p></details>
+    <details data-c="productivitate"><summary><span>Folosește un singur calendar<span class="tag">Organizare</span></span></summary><p>Pune în același loc orele, termenele de proiecte, examenele și colocviile. Setează notificări cu o săptămână și cu o zi înainte. Termenele ratate vin de obicei din informații împrăștiate prin mai multe locuri.</p></details>
+    <details data-c="productivitate"><summary><span>Spargă proiectele mari în pași mici<span class="tag">Organizare</span></span></summary><p>„Lucrez la licență” nu e o sarcină, e o speranță. „Scriu schița capitolului 2” este o sarcină. Împarte lucrul în pași care se termină într-o oră–două și bifează-i pe rând.</p></details>
+    <details data-c="productivitate"><summary><span>Tehnica Pomodoro<span class="tag">Organizare</span></span></summary><p>25 de minute de concentrare totală, 5 de pauză, iar după patru runde o pauză mai lungă. Telefonul stă în altă cameră. Poți folosi cronometrul de mai jos.</p></details>
+    <details data-c="bani"><summary><span>Cere reducerea de student<span class="tag">Bani</span></span></summary><p>Transportul în comun, abonamentele la cinema, teatru, muzee, software și multe aplicații au tarife pentru studenți. Păstrează la îndemână carnetul sau legitimația și întreabă mereu.</p></details>
+    <details data-c="bani"><summary><span>Fă un buget simplu, lunar<span class="tag">Bani</span></span></summary><p>Notează venitul (bursă, ajutor de acasă, job) și cheltuielile fixe: chirie, mâncare, transport. Ce rămâne se împarte pe săptămâni. Nu trebuie să fie complicat, o foaie de calcul e suficientă.</p></details>
+    <details data-c="bani"><summary><span>Caută burse și programe<span class="tag">Bani</span></span></summary><p>Pe lângă bursele de merit și sociale, verifică programele Erasmus+, burse de la companii și fundații, precum și cele oferite de facultate. Multe termene sunt la început de semestru, așa că urmărește anunțurile secretariatului.</p></details>
+    <details data-c="bani"><summary><span>Gătește în loc să comanzi<span class="tag">Bani</span></span></summary><p>Pregătește mâncare pentru 2–3 zile deodată. Economisești bani și timp, iar mănânci mai bine decât din fast-food. Împarte costurile cu colegii de cameră sau de apartament.</p></details>
+    <details data-c="viata"><summary><span>Mergi la cursuri, mai ales în primul an<span class="tag">Viața de student</span></span></summary><p>Chiar dacă prezența nu e obligatorie, la curs afli ce accentuează profesorul și îți faci colegi cu care poți lucra mai târziu. Absențele repetate se plătesc la sesiune.</p></details>
+    <details data-c="viata"><summary><span>Alătură-te unei organizații studențești<span class="tag">Viața de student</span></span></summary><p>Ligi, asociații, cluburi sportive sau culturale: acolo îți faci prieteni, afli informații utile și aduni experiență pentru CV. Alege una care te atrage, nu una la care mergi din obligație.</p></details>
+    <details data-c="viata"><summary><span>Spune „nu” fără să te simți vinovat<span class="tag">Viața de student</span></span></summary><p>Nu poți fi la toate petrecerile, proiectele și voluntariatele. Alege câteva lucruri care contează și fă-le bine. Odihna și timpul pentru tine fac parte din plan.</p></details>
+    <details data-c="viata"><summary><span>Cere ajutor când simți că nu mai faci față<span class="tag">Viața de student</span></span></summary><p>Stresul, singurătatea și epuizarea sunt frecvente printre studenți. Multe universități au cabinet de consiliere psihologică gratuit. Să ceri sprijin e o decizie rezonabilă, nu un semn de slăbiciune.</p></details>
+  </div>
+</section>
+
+<section aria-labelledby="u">
+  <h2 id="u">Unelte rapide</h2>
+  <div class="tools">
+    <div class="box">
+      <h3>Cronometru Pomodoro</h3>
+      <p class="small" id="mode">Concentrare · 25 minute</p>
+      <div class="timer" id="clock" aria-live="off">25:00</div>
+      <div class="btns">
+        <button class="b" id="go">Pornește</button>
+        <button class="b alt" id="reset">Resetează</button>
+        <button class="b alt" id="swap">Pauză 5 min</button>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Lista de pregătire pentru sesiune</h3>
+      <p class="small">Bifările rămân salvate pe acest dispozitiv.</p>
+      <ul class="check" id="list"></ul>
+    </div>
+  </div>
+</section>
+
+<footer>Sfaturile de aici sunt orientative: adaptează-le la facultatea, programul și ritmul tău.</footer>
+</div>
+
+<script>
+// Filtre
+const bar=document.getElementById('bar'),items=[...document.querySelectorAll('#tips details')];
+bar.addEventListener('click',e=>{
+  const b=e.target.closest('.chip');if(!b)return;
+  bar.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));
+  const f=b.dataset.f;items.forEach(d=>d.hidden=!(f==='toate'||d.dataset.c===f));
+});
+// Pomodoro
+let mins=25,left=1500,t=null;
+const clock=document.getElementById('clock'),go=document.getElementById('go'),mode=document.getElementById('mode'),swap=document.getElementById('swap');
+const show=()=>{clock.textContent=String(Math.floor(left/60)).padStart(2,'0')+':'+String(left%60).padStart(2,'0');document.title=(t?clock.textContent+' · ':'')+'Pe scurt, la facultate'};
+function stop(){clearInterval(t);t=null;go.textContent='Pornește';show()}
+go.onclick=()=>{
+  if(t){stop();return}
+  go.textContent='Pauză';
+  t=setInterval(()=>{left--;if(left<=0){left=0;stop();go.textContent='Pornește';mode.textContent='Gata! Fă o pauză.'}show()},1000);
+};
+document.getElementById('reset').onclick=()=>{stop();left=mins*60;show()};
+swap.onclick=()=>{
+  stop();
+  if(mins===25){mins=5;left=300;mode.textContent='Pauză · 5 minute';swap.textContent='Concentrare 25 min'}
+  else{mins=25;left=1500;mode.textContent='Concentrare · 25 minute';swap.textContent='Pauză 5 min'}
+  show();
+};
+// Listă
+const tasks=['Am strâns toate cursurile și notițele','Am făcut un calendar cu datele examenelor','Am obținut subiecte din anii trecuți','Am planificat recapitularea pe zile','Am stabilit un program de somn','Am pregătit actele și materialele pentru examen'];
+let saved={};try{saved=JSON.parse(localStorage.getItem('chk')||'{}')}catch(e){}
+const ul=document.getElementById('list');
+tasks.forEach((txt,i)=>{
+  const li=document.createElement('li');
+  li.innerHTML='<label><input type="checkbox"><span></span></label>';
+  li.querySelector('span').textContent=txt;
+  const cb=li.querySelector('input');cb.checked=!!saved[i];
+  cb.onchange=()=>{saved[i]=cb.checked;try{localStorage.setItem('chk',JSON.stringify(saved))}catch(e){}};
+  ul.appendChild(li);
+});
+// Temă
+const root=document.documentElement;
+try{const s=localStorage.getItem('theme');if(s)root.dataset.theme=s}catch(e){}
+document.getElementById('theme').onclick=()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+  root.dataset.theme=dark?'light':'dark';
+  try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}
+};
+</script>
+</body>
+</html>
